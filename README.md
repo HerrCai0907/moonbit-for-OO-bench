@@ -11,10 +11,10 @@
 
 execution time (ms)
 
-| cpu arch | moonbit with wasm GC | moonbit without wasm GC | assemblyscript | native (baseline) |
-| -------- | -------------------- | ----------------------- | -------------- | ----------------- |
-| aarch64  | 225                  | 870                     | 246            | 64                |
-| x86_64   | 182                  | 681                     | 146            |
+| cpu arch | moonbit with wasm GC | moonbit without wasm GC | assemblyscript     | native (baseline) |
+| -------- | -------------------- | ----------------------- | ------------------ | ----------------- |
+| aarch64  | 222.88133300000004   | 846.999833              | 237.52579200000002 | 63                |
+| x86_64   | 206.24795300000005   | 670.778983              | 150.47774100000004 | 39                |
 
 ## Case 1
 
@@ -27,35 +27,38 @@ execution time (ms)
   - as: assemblyscript@0.28.2
 
 ```
--rw-r--r--  1 caicongcong  staff  7812 Jul  9 22:20 build/release.wasm
+
+-rw-r--r--  1 caicongcong  staff  7774 Jul  9 23:54 build/release.wasm
 /Users/caicongcong/dev/wasm-bench-set
-Finished. moon: no work to do
 -rw-r--r--  1 caicongcong  staff  7207 Jul  9 22:09 target/wasm/release/build/main/main.wasm
 /Users/caicongcong/dev/wasm-bench-set
-Finished. moon: no work to do
 -rw-r--r--  1 caicongcong  staff  3328 Jul  9 22:09 target/wasm-gc/release/build/main/main.wasm
 /Users/caicongcong/dev/wasm-bench-set
 PerformanceMeasure {
   name: 'moonbit-wasm-1.0',
   entryType: 'measure',
-  startTime: 11.003584,
-  duration: 870.699,
-  detail: null
-}
-PerformanceMeasure {
-  name: 'moonbit-wasm-gc',
-  entryType: 'measure',
-  startTime: 889.963667,
-  duration: 225.48904199999993,
+  startTime: 10.010292,
+  duration: 846.999833,
   detail: null
 }
 PerformanceMeasure {
   name: 'assemblyscript',
   entryType: 'measure',
-  startTime: 1116.251625,
-  duration: 246.43720899999994,
+  startTime: 863.230917,
+  duration: 237.52579200000002,
   detail: null
 }
+PerformanceMeasure {
+  name: 'moonbit-wasm-gc',
+  entryType: 'measure',
+  startTime: 1101.926542,
+  duration: 222.88133300000004,
+  detail: null
+}
+real    0m0.063s
+user    0m0.060s
+sys     0m0.003s
+/Users/caicongcong/dev/wasm-bench-set
 ```
 
 ## Case 2
@@ -69,33 +72,38 @@ PerformanceMeasure {
   - as: assemblyscript@0.28.2
 
 ```
--rw-rw-r-- 1 ccc ccc 7812 Jul  9 22:20 build/release.wasm
+-rw-rw-r-- 1 ccc ccc 7774 Jul  9 23:53 build/release.wasm
 /home/ccc/moonbit-for-OO-bench
-Finished. moon: ran 2 tasks, now up to date
+Finished. moon: no work to do
 -rw-rw-r-- 1 ccc ccc 7207 Jul  9 22:20 target/wasm/release/build/main/main.wasm
 /home/ccc/moonbit-for-OO-bench
-Finished. moon: ran 2 tasks, now up to date
+Finished. moon: no work to do
 -rw-rw-r-- 1 ccc ccc 3329 Jul  9 22:20 target/wasm-gc/release/build/main/main.wasm
 /home/ccc/moonbit-for-OO-bench
 PerformanceMeasure {
   name: 'moonbit-wasm-1.0',
   entryType: 'measure',
-  startTime: 8.700226,
-  duration: 681.6101209999999,
-  detail: null
-}
-PerformanceMeasure {
-  name: 'moonbit-wasm-gc',
-  entryType: 'measure',
-  startTime: 693.982351,
-  duration: 182.57686999999999,
+  startTime: 21.306938,
+  duration: 670.778983,
   detail: null
 }
 PerformanceMeasure {
   name: 'assemblyscript',
   entryType: 'measure',
-  startTime: 877.101537,
-  duration: 146.04383099999995,
+  startTime: 695.800525,
+  duration: 150.47774100000004,
   detail: null
 }
+PerformanceMeasure {
+  name: 'moonbit-wasm-gc',
+  entryType: 'measure',
+  startTime: 847.122578,
+  duration: 206.24795300000005,
+  detail: null
+}
+
+real	0m0.039s
+user	0m0.032s
+sys	0m0.007s
+/home/ccc/moonbit-for-OO-bench
 ```
