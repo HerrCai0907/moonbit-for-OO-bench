@@ -32,12 +32,6 @@ class DataContainer {
   public data: IData[] = new Array();
 }
 
-class Stringify {
-  public static stringify(data: IData): string {
-    return data.getString();
-  }
-}
-
 let container = new DataContainer();
 
 function foo(): string {
@@ -49,7 +43,7 @@ function foo(): string {
   }
   let s = new Array<string>(data.length);
   for (let i = 0; i < container.data.length; i++) {
-    s[i] = Stringify.stringify(data[i]);
+    s[i] = data[i].getString();
   }
   return s.join(",");
 }
