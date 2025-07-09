@@ -37,6 +37,8 @@ async function run(target, path) {
 
 (async () => {
   await run("moonbit-wasm-1.0", "moonbit/target/wasm/release/build/main/main.wasm");
+  await run("moonbit-wasm-1.0-bianryen", "moonbit/target/wasm/release/build/main/main.opt.wasm");
   await run("assemblyscript", "as/build/release.wasm");
   await run("moonbit-wasm-gc", "moonbit/target/wasm-gc/release/build/main/main.wasm");
+  await run("moonbit-wasm-gc-binaryen", "moonbit/target/wasm-gc/release/build/main/main.opt.wasm");
 })();
