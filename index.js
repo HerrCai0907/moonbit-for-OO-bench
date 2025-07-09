@@ -1,3 +1,12 @@
+function as_print_log(ptr, m) {
+  const buffer = m.instance.exports.memory.buffer;
+  const id = new Uint32Array(buffer)[(ptr - 8) >>> 2];
+  if (id !== 2) throw Error(`not a string: ${ptr}`);
+  let len = new Uint32Array(buffer)[(ptr - 4) >>> 2] >>> 1;
+  const wtf16 = new Uint16Array(buffer, ptr, len);
+  console.log(new TextDecoder("utf-16le", { fatal: true }).decode(wtf16));
+}
+
 async function run(target, path) {
   performance.clearMarks();
   performance.clearMeasures();
@@ -6,7 +15,7 @@ async function run(target, path) {
 
   let m = await WebAssembly.instantiate(buf, {
     env: {
-      log: (v) => {},
+      log: (ptr) => {},
     },
   });
   performance.mark("start");
