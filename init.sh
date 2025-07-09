@@ -1,0 +1,2 @@
+cd as
+npm ci

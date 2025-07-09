@@ -1,0 +1,8 @@
+{
+  "is-main": true,
+  "import": [],
+  "targets": {
+    "extern_wasm_1.mbt": ["wasm"],
+    "extern_wasm_gc.mbt": ["wasm-gc"]
+  }
+}
