@@ -11,9 +11,9 @@
 
 execution time (ms)
 
-| cpu arch | moonbit with wasm GC | moonbit without wasm GC | assemblyscript |
-| -------- | -------------------- | ----------------------- | -------------- |
-| aarch64  | 225                  | 870                     | 246            |
+| cpu arch | moonbit with wasm GC | moonbit without wasm GC | assemblyscript | native (baseline) |
+| -------- | -------------------- | ----------------------- | -------------- | ----------------- |
+| aarch64  | 225                  | 870                     | 246            | 64                |
 | x86_64   | 182                  | 681                     | 146            |
 
 ## Case 1
